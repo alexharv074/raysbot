@@ -4,8 +4,8 @@
 # Commands:
 #   hubot youtube me <query> - Searches YouTube for the query and returns the video embed link.
 config =
-  client_key: HUBOT_INSTAGRAM_CLIENT_KEY
-  client_secret: HUBOT_INSTAGRAM_ACCESS_KEY
+  client_key:  process.env.HUBOT_INSTAGRAM_CLIENT_KEY
+  client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
  
 Instagram = require('instagram-node-lib')
 Instagram.set('client_id', config.client_key);
