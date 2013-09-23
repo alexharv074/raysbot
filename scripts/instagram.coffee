@@ -1,8 +1,21 @@
 # Description:
-#   Messing around with the YouTube API.
+#   gets photos of hash tag
+#
+# Dependencies:
+#   "instagram-node-lib": "*"
+#
+# Configuration:
+#   HUBOT_INSTAGRAM_CLIENT_KEY
+#   HUBOT_INSTAGRAM_ACCESS_KEY
 #
 # Commands:
-#   hubot youtube me <query> - Searches YouTube for the query and returns the video embed link.
+#   hubot insta tag <tag> <count>- Show recent instagram tags
+#   by default count is 1 
+#
+# Author:
+#   rashmi14yadav
+#
+
 config =
   client_key:  process.env.HUBOT_INSTAGRAM_CLIENT_KEY
   client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
