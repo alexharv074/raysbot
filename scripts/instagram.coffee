@@ -17,9 +17,9 @@
 #
 
 config =
-  client_key:  '39040b974a8040f39838b8392e7f03d6'
-  client_secret:  '87834e628a274851b5b5eb5cd268e52b'
-  access_token: '35216382.1fb234f.495db59df7a64156a168334d0af52688'
+  client_key:     process.env.HUBOT_INSTAGRAM_CLIENT_KEY
+  client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY  
+  access_token:   process.env.HUBOT_INSTAGRAM_ACCESS_TOKEN
  
 Instagram = require('instagram-node-lib')
 Instagram.set('client_id', config.client_key)
