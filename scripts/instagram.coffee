@@ -3,8 +3,6 @@
 #
 # Commands:
 #   hubot youtube me <query> - Searches YouTube for the query and returns the video embed link.
-HUBOT_INSTAGRAM_CLIENT_KEY = '45bbceb17a5f4c54a011abbc09adfcb9'
-HUBOT_INSTAGRAM_ACCESS_KEY = '94fa656404434d568308b9a51229213d'
 config =
   client_key: HUBOT_INSTAGRAM_CLIENT_KEY
   client_secret: HUBOT_INSTAGRAM_ACCESS_KEY
@@ -15,12 +13,7 @@ Instagram.set('client_secret', config.client_secret);
 module.exports = (robot) ->
   robot.respond /(insta tag)( me )?(.*)/i, (msg) ->
     count = 1
-    unless config.client_key
-      msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
-      return
-    unless config.client_secret
-      msg.send "Please set the HUBOT_TWITTER_ACCESS_TOKEN environment variable."
-      return
+    authenticate_user()
     if msg.match[3]
       text = msg.match[3].trim()
       text = text.split(" ")
@@ -37,4 +30,11 @@ module.exports = (robot) ->
           msg.send data[index]['images']['standard_resolution']['url']
           index++
 
+authenticate_user = () ->
+  unless config.client_key
+    msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
+    return
+  unless config.client_secret
+    msg.send "Please set the HUBOT_TWITTER_ACCESS_TOKEN environment variable."
+    return
 
