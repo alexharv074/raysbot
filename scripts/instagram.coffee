@@ -13,6 +13,7 @@ Instagram = require('instagram-node-lib')
 Instagram.set('client_id', config.client_key);
 Instagram.set('client_secret', config.client_secret);
 module.exports = (robot) ->
+  count = 1
   robot.respond /(insta tag)( me )?(.*)/i, (msg) ->
     unless config.client_key
       msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
@@ -20,16 +21,20 @@ module.exports = (robot) ->
     unless config.client_secret
       msg.send "Please set the HUBOT_TWITTER_ACCESS_TOKEN environment variable."
       return
-
     if msg.match[3]
       text = msg.match[3].trim()
+      text = text.split(" ")
+      tag =  text[0]
+      count = text[1] if text[1]
     else
       msg.send 'Please provied tag'
       return
     Instagram.tags.recent 
-      name: "#{text.trim()}"
+      name: "#{tag}"
       complete: (data) ->
-        for photo in data
-          msg.send photo['images']['standard_resolution']['url']
+        index = 1
+        while index <= count
+          msg.send data[index]['images']['standard_resolution']['url']
+          index++
 
 
