@@ -18,7 +18,7 @@
 
 config =
   client_key:     process.env.HUBOT_INSTAGRAM_CLIENT_KEY
-  client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY  
+  client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
   access_token:   process.env.HUBOT_INSTAGRAM_ACCESS_TOKEN
  
 Instagram = require('instagram-node-lib')
@@ -60,7 +60,6 @@ module.exports = (robot) ->
         complete: (data) ->
           user_id = data[0]['id']
           if user_id
-            console.log(count)
             Instagram.users.recent
               user_id: user_id
               count: count
