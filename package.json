@@ -28,6 +28,7 @@
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "twit":          "1.1.6",
     "nodepie":       "0.5.0",
+    "cheerio":       "0.12.4",
     "instagram-node-lib": "*",
     "hubot-principle": "git://github.com/hubot-scripts/hubot-principles.git",
     "hubot-instagram": "git://github.com/raysrashmi/hubot-instagram.git"
