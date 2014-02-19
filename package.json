@@ -1,41 +1,37 @@
 {
   "name": "hosted-hubot",
   "version": "2.6.3",
-
   "author": "GitHub Inc.",
-
   "keywords": [
     "github",
     "hubot",
     "campfire",
     "bot"
   ],
-
   "description": "A simple helpful robot for your Company",
-
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/github/hubot/raw/master/LICENSE"
-  }],
-
-  "repository" : {
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/github/hubot/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
     "type": "git",
     "url": "https://github.com/github/hubot.git"
   },
-
   "dependencies": {
-    "hubot":         ">= 2.6.0 < 3.0.0",
+    "hubot": ">= 2.6.0 < 3.0.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
-    "twit":          "1.1.6",
-    "nodepie":       "0.5.0",
-    "cheerio":       "0.12.4",
+    "twit": "1.1.6",
+    "nodepie": "0.5.0",
+    "cheerio": "0.12.4",
     "instagram-node-lib": "*",
     "hubot-principle": "git://github.com/hubot-scripts/hubot-principles.git",
-    "hubot-instagram": "git://github.com/raysrashmi/hubot-instagram.git"
+    "hubot-instagram": "git://github.com/raysrashmi/hubot-instagram.git",
+    "hubot-hipchat": "~2.6.4"
   },
-
   "engines": {
     "node": ">= 0.8.x",
-    "npm":  ">= 1.1.x"
+    "npm": ">= 1.1.x"
   }
 }
